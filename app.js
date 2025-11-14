@@ -9,7 +9,7 @@ const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 require("dotenv").config();
 
@@ -18,7 +18,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRouter);
 app.use("/api/product", productRoutes);
-app.use("/api/users", userRoutes);
+app.use("/api/user", userRoutes);
 
 const start = async () => {
   await mongoose.connect(process.env.MONGO_URI);

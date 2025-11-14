@@ -21,14 +21,14 @@ const register = async (req, res) => {
       });
     }
 
-     if ( !email) {
+    if (!email) {
       return res.status(400).json({
         status: "error",
         message: "Email is required",
       });
     }
 
-    if ( !password) {
+    if (!password) {
       return res.status(400).json({
         status: "error",
         message: "Password is required",
@@ -104,7 +104,7 @@ const login = async (req, res) => {
     };
     return res.status(200).json({
       status: "success",
-      message: "Logged in",
+      message: "User logged in successfully",
       data: { user: userSafe, token },
     });
   } catch (err) {
